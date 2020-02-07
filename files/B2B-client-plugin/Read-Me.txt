@@ -1,0 +1,44 @@
+IMPORTANT NOTE:- Updated Version of the System
+
+
+Procedure how the system works:-
+
+Step 1:- Input the data into the i-comAccounts.txt and i-Q-order.txt .
+	  
+
+
+
+(For the reference Data )
+i-comAccounts.txt:-
+
+Format of Data in file :-                                               BankAccount,BankPassword,PortBank1,PortBank2,ShipAccount,ShipPassword,shipPort1,shipport2,TaxAccount,TaxPassword,Taxport1,Taxport2,ITAccount,ITPassword,ITport1,Itport2 
+
+Example Data in file:- Booksbank,&bookbank12,11014,11015,booksShip,&bookship12,11016,11017,booksTax,&booktax12,11018,11018,booksIT,&bookIT12,11019,11011
+
+
+i-Q-order.txt:-
+
+Format of Data in file :-OrderId,CutomerId,Itemid,Quantity,Price,BankAccount,ShipMethod,ShipAddress
+
+
+Example Data in file:- 
+                         order1,customer1,item5,6,300,123456,regular,newpaltz
+
+
+
+Step 2:-Now call the CallMe.java program (CallMe .java file ) from your program.The program will take care of calling bank,ship,Mayor,IT and stores the answer from server in Ac.dat 
+
+Step 3:- Read Ac.dat file using your program.If the order is successfull the file will contain 0 in it.
+
+The Ac.dat file will contain one of the following:-
+0 means order is successfull.  
+1 bank transaction failed.
+2 shipping failed.
+3 Taxiation Failed.
+4 IT services Failed.
+
+example of data in Ac.dat:-
+
+0,orderplaced
+
+      

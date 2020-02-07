@@ -1,0 +1,228 @@
+<?php
+   session_start();
+   
+   if(session_destroy()) {
+      header("Location: index.html");
+   }
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>IT Services</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="modal_styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+  }
+  .bg-2 { 
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-3 { 
+    background-color: #ffffff; /* White */
+    color: #555555;
+  }
+  .bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+
+  </style>
+  
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #333399;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">IT Services</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="https://cs.newpaltz.edu/e/b-f19-03/">Home</a></li>
+      
+	<form class="navbar-form navbar-left" action="/action_page.php">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" name="search">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><span class="glyphicon glyphicon-user"></span> Sign Up</button></li>
+      <li><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span class="glyphicon glyphicon-log-in"></span> Login</button></li>
+ 
+
+    </ul>
+  </div>
+</nav>
+
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+  <h3 class="margin"></h3>
+  <div id="homepage-slideshow" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        
+                        <img src="storage.jpeg" alt="" style="width : 1900px; height : 700px;     " />
+                    </div>
+                    <div class="item">
+                        <img src="visualize.png" alt="" style="width : 1900px; height : 705px;     " />
+                    </div>
+                  <div class="item">
+                        <img src="router.jpg" alt="" style="width : 1900px; height : 700px;     " />
+                    </div>
+                </div>
+                
+            </div>
+  <h3>Everthing You Want </h3>
+</div>
+
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+  <h3 class="margin">Student Discounts</h3>
+  <p> Special Prices For studnets </p>
+<p> Quality And Customer Stastisfaction is our major priority</p>
+  <a href="#" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-search"></span> Search
+  </a>
+</div>
+
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center">    
+  <h3 class="margin">How to order?</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <p style="color:red">Select the product</p>
+      <img src="catalogue.png" class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-4"> 
+      <p style="color:red">Add to cart</p>
+      <img src="cart.png" class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-4"> 
+      <p style="color:red">Pay with Card And Get it your Door step</p>
+      <img src="payment.png" class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> -->
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="login.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="username"><b>Username</b></label><br>
+      <input style="width:90%" type="text" placeholder="Enter Username" name="username" required><br>
+
+      <label for="password"><b>Password</b></label><br>
+      <input style="width:90%" type="password" placeholder="Enter Password" name="password" required><br>
+        
+      <button style="width:90%" type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div style="width:90%" class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" action="register.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="username"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="username" required>
+
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+      <label for="Customer_Type"><b>Customer_Type</b></label>
+        <input type = "text" list = "CustomerType" name="CustomerType"> 
+      <datalist id = "CustomerType">
+        <option value = "RegularUser">
+        <option value = "BusinessUser">
+       </datalist>
+        <label for="email"><b>E-Mail</b></label>
+      <input type="text" placeholder="E-Mail" name="email" required> 
+        <label for="address"><b>Address</b></label>
+      <input type="text" placeholder="Address" name="address" required>
+
+      <button type="submit">Sign Up</button>
+      
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+<!-- Modal Ends -->>
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p>Contact Us <a href="https://www.w3schools.com">SUNYstore@newpaltz.edu</a></p> 
+</footer>
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Get the modal
+var modal = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
+</body>
+</html>
